@@ -15,5 +15,5 @@ Webcodein learning website repository.
         - npm run dev:ssr
 --
 
-    - ng serve angular_theme --ssl --live-reload      
+    - ng serve admin --ssl --live-reload      
     - To build for production  or npm run dev:ssr with edit environment.ts
