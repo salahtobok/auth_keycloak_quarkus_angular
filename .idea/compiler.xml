@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="user-service" />
       </profile>
       <profile name="Annotation profile for quarqus-salahtobok-projects" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -57,15 +58,10 @@
           <entry name="$MAVEN_REPOSITORY$/io/quarkus/quarkus-bom/2.14.2.Final/quarkus-bom-2.14.2.Final.pom" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar" />
         </processorPath>
-        <module name="admin-system" />
         <module name="employee-service" />
+        <module name="admin-system" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="admin-system" target="11" />
-      <module name="authentification_quarkus_angular_keycloak" target="1.5" />
-      <module name="employee-service" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
