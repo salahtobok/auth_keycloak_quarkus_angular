@@ -1,4 +1,4 @@
-# ads-system Project
+# authentification_quarkus_angular_keycloak Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
@@ -57,7 +57,6 @@ If you want to learn more about building native executables, please consult http
 
 ## Manually fetch access token from keycloak :
 
-<hr/>
 <h3>01 - Get Token with PowerShell</h3>
 Command begin -- :
 <br>
