@@ -1,27 +1,19 @@
-# Admin
+Webcodein learning website repository.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
 
-## Development server
+    01 - We organize the project by types of files
+    02 - Deploy angular ssr app https://www.saninnsalas.com/deploy-angular-universal-to-shared-apache-hosting-with-passenger/
+    03 - Add locale & internationalize the app :
+        - ng add @angular/localize
+        - ng extract-i18n --output-path src/locale
+        - cp src/locale/messages.xlf src/locale/messages.es.xlf
+        - ng generate component components/header --module modules/common-content
+        - npm install --global serve
+        - serve .\dist\angular_theme\browser
+        - npm install --global lite-server
+        - --base-href
+        - npm run dev:ssr
+--
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    - ng serve angular_theme --ssl --live-reload      
+    - To build for production  or npm run dev:ssr with edit environment.ts
