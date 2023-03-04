@@ -31,7 +31,7 @@ public class RolesResource {
                 .clientSecret("RtWFIpgFl0VtHdj4pwV5kvJSXfQ0Nytf")
                 .username("salahtobok")
                 .password("root")
-//                .grantType(CLIENT_CREDENTIALS)
+                .grantType(PASSWORD)
                 .build();
         }
 
