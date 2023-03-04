@@ -64,7 +64,7 @@ $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 <br>
 $headers.Add("Content-Type", "application/x-www-form-urlencoded")
 <br>
-$body = "username=salahtobok&password=root&grant_type=password&client_id=backend-service&client_secret=KuKbAECIBxGqwFJADI4GiMlDwy9iealn&scope=openid"
+$body = "username=salahtobok&password=root&grant_type=password&client_id=backend-service&client_secret=76e5X5DjYZWUX0a4TsP7njBYVVfrlT6p&scope=openid"
 <br>
 $token_response = Invoke-RestMethod 'http://localhost:8543/realms/quarkus/protocol/openid-connect/token' -Method 'POST' -Headers $headers -Body $body
 <br>

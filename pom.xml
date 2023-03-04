@@ -10,6 +10,7 @@
 
     <modules>
         <module>admin-system</module>
+        <module>room-service</module>
         <module>employee-service</module>
         <module>user-service</module>
     </modules>

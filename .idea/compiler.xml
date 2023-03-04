@@ -59,6 +59,7 @@
           <entry name="$MAVEN_REPOSITORY$/io/quarkus/quarkus-bom/2.14.2.Final/quarkus-bom-2.14.2.Final.pom" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar" />
         </processorPath>
+        <module name="room-service" />
         <module name="employee-service" />
         <module name="admin-system" />
       </profile>
@@ -68,6 +69,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="admin-system" options="-parameters" />
       <module name="employee-service" options="-parameters" />
+      <module name="room-service" options="-parameters" />
     </option>
   </component>
 </project>
