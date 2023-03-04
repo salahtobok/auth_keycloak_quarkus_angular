@@ -20,40 +20,19 @@ public class RolesResource {
 
     @Inject
     Keycloak keycloak;
-    Keycloak keycloak1;
+    Keycloak keycloakByKeycloakBuilder;
 
     @PostConstruct
     public void initKeycloak() {
-
-/*        keycloak1 = KeycloakBuilder.builder()
+        keycloakByKeycloakBuilder = KeycloakBuilder.builder()
                 .serverUrl("http://localhost:8543")
                 .realm("quarkus")
                 .clientId("backend-service")
-                .clientSecret("76e5X5DjYZWUX0a4TsP7njBYVVfrlT6p")
-                .username("salahtobok")
-                .password("root")
-                .grantType(PASSWORD)
-                .build();*/
-
-
-        keycloak1 = KeycloakBuilder.builder()
-                .serverUrl("http://localhost:8543")
-                .realm("quarkus")
-                .clientId("backend-service")
-//                .clientSecret("76e5X5DjYZWUX0a4TsP7njBYVVfrlT6p")
+                .clientSecret("RtWFIpgFl0VtHdj4pwV5kvJSXfQ0Nytf")
                 .username("salahtobok")
                 .password("root")
 //                .grantType(CLIENT_CREDENTIALS)
                 .build();
-
-
-/*                worked when client is public
-        .serverUrl("http://localhost:8543")
-                .realm("quarkus")
-                .clientId("backend-service")
-                .username("salahtobok")
-                .password("root")
-                .build();*/
         }
 
 
@@ -61,16 +40,16 @@ public class RolesResource {
     @Path("/roles")
     public List<RoleRepresentation> getRoles() {
         try {
-            System.out.println("keycloak.realm(\"quarkus\").roles().list() = " + keycloak.tokenManager().grantToken().getToken());
+            System.out.println("keycloak.tokenManager().grantToken().getToken() = " + keycloak.tokenManager().grantToken().getToken());
         }catch (Exception exception){
-            System.out.println("exception.getMessage() keycloak1 = " + exception.getMessage());
+            System.out.println("exception.getMessage() keycloak = " + exception.getMessage());
         }
 
 
         try {
-            System.out.println("keycloak1.realm(\"quarkus\").roles().list() = " + keycloak1.tokenManager().grantToken().getToken());
+            System.out.println("keycloakByKeycloakBuilder.tokenManager().grantToken().getToken() = " + keycloakByKeycloakBuilder.tokenManager().grantToken().getToken());
         }catch (Exception exception){
-            System.out.println("exception.getMessage() keycloak1 = " + exception.getMessage());
+            System.out.println("exception.getMessage() keycloakByKeycloakBuilder = " + exception.getMessage());
         }
         return keycloak.realm("quarkus").roles().list();
     }
