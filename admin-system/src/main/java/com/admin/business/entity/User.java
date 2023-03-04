@@ -20,10 +20,7 @@ import java.util.Optional;
 @Data
 @Entity
 @Table(name = "admin_user", schema = DbSchema.ADMINISTRATION_SCHEMA)
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "user_type", discriminatorType = DiscriminatorType.STRING)
-@DiscriminatorValue("Admin")
-public class User extends AuditedEntity implements Serializable, Cloneable {
+public class User extends AuditedEntity implements Serializable {
     private static Log log = LogFactory.getLog(User.class);
 
     @JsonbTransient
