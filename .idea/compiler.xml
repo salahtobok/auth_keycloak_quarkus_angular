@@ -7,9 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="keycloak-admin-client" />
         <module name="user-service" />
       </profile>
-      <profile name="Annotation profile for quarqus-salahtobok-projects" enabled="true">
+      <profile name="Annotation profile for quarkus-salahtobok-projects" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -64,12 +65,17 @@
         <module name="admin-system" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="security-keycloak-admin-client" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="admin-system" options="-parameters" />
       <module name="employee-service" options="-parameters" />
+      <module name="keycloak-admin-client" options="-parameters" />
       <module name="room-service" options="-parameters" />
+      <module name="security-keycloak-admin-client" options="-parameters" />
     </option>
   </component>
 </project>
