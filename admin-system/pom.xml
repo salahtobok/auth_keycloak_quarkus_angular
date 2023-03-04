@@ -75,10 +75,7 @@
       <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-resteasy-reactive-jsonb</artifactId>
-    </dependency>
+
     <dependency>
       <groupId>javax.faces</groupId>
       <artifactId>javax.faces-api</artifactId>

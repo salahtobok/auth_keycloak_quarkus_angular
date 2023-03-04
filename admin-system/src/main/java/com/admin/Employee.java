@@ -1,7 +1,6 @@
 package com.admin;
 
 
-import com.admin.business.entity.User;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;

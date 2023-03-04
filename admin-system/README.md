@@ -100,3 +100,22 @@ $response | ConvertTo-Json
 02 - taskkill /PID <PID> /F
 
 
+## Note : 
+
+<p>Adding this dependency</p>  
+
+    <dependency>
+      <groupId>javax.faces</groupId>
+      <artifactId>javax.faces-api</artifactId>
+      <version>2.3</version>
+      <scope>provided</scope>
+    </dependency>
+
+or
+
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy-reactive-jsonb</artifactId>
+    </dependency>
+
+<p>will throw java.lang.NullPointerException: Cannot invoke "String.startsWith(String)" because "authHeader" is null</p>

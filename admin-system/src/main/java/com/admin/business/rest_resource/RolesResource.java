@@ -18,8 +18,8 @@ import static org.keycloak.OAuth2Constants.PASSWORD;
 @Path("/api/admin")
 public class RolesResource {
 
-//    @Inject
-//    Keycloak keycloak;
+    @Inject
+    Keycloak keycloak;
     Keycloak keycloak1;
 
     Keycloak adminCli ;
@@ -78,11 +78,18 @@ public class RolesResource {
     @Path("/roles")
     public List<RoleRepresentation> getRoles() {
         try {
-            System.out.println("keycloak1.realm(\"quarkus\").roles().list() = " + keycloak1.tokenManager().grantToken());
+            System.out.println("keycloak.realm(\"quarkus\").roles().list() = " + keycloak.tokenManager().grantToken().getToken());
         }catch (Exception exception){
             System.out.println("exception.getMessage() keycloak1 = " + exception.getMessage());
         }
-        return new ArrayList<>();
+
+
+        try {
+            System.out.println("keycloak1.realm(\"quarkus\").roles().list() = " + keycloak1.tokenManager().grantToken().getToken());
+        }catch (Exception exception){
+            System.out.println("exception.getMessage() keycloak1 = " + exception.getMessage());
+        }
+        return keycloak.realm("quarkus").roles().list();
     }
 
 }
