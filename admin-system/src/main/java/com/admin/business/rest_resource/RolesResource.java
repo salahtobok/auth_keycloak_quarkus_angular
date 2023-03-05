@@ -20,11 +20,12 @@ public class RolesResource {
 
     @Inject
     Keycloak keycloak;
-    Keycloak keycloakByKeycloakBuilder;
+    Keycloak keycloakPasswordGrantType;
+    Keycloak keycloakClientCredentialsGrantType;
 
     @PostConstruct
     public void initKeycloak() {
-        keycloakByKeycloakBuilder = KeycloakBuilder.builder()
+        keycloakPasswordGrantType = KeycloakBuilder.builder()
                 .serverUrl("http://localhost:8543")
                 .realm("quarkus")
                 .clientId("backend-service")
@@ -33,6 +34,16 @@ public class RolesResource {
                 .password("root")
                 .grantType(PASSWORD)
                 .build();
+
+        // To order to enable this type of access you should set "Service Accounts Enabled = Enabled" end set Access Type="CREDENTIAL"
+        // In client Setting
+        keycloakClientCredentialsGrantType = KeycloakBuilder.builder()
+                .serverUrl("http://localhost:8543")
+                .realm("quarkus")
+                .clientId("backend-service")
+                .clientSecret("RtWFIpgFl0VtHdj4pwV5kvJSXfQ0Nytf")
+                .grantType(CLIENT_CREDENTIALS)
+                .build();
         }
 
 
@@ -40,17 +51,24 @@ public class RolesResource {
     @Path("/roles")
     public List<RoleRepresentation> getRoles() {
         try {
-            System.out.println("keycloak.tokenManager().grantToken().getToken() = " + keycloak.tokenManager().grantToken().getToken());
+            System.out.println("Access token to call the (Master) 'Realm' Admin REST API which requires authorization = " + keycloak.tokenManager().grantToken().getToken());
         }catch (Exception exception){
-            System.out.println("exception.getMessage() keycloak = " + exception.getMessage());
+            System.out.println("exception.getMessage() = " + exception.getMessage());
         }
 
 
         try {
-            System.out.println("keycloakByKeycloakBuilder.tokenManager().grantToken().getToken() = " + keycloakByKeycloakBuilder.tokenManager().grantToken().getToken());
+            System.out.println("Access token to call the (salahtobok) 'User' Admin REST API which requires authorization  = " + keycloakPasswordGrantType.tokenManager().grantToken().getToken());
         }catch (Exception exception){
-            System.out.println("exception.getMessage() keycloakByKeycloakBuilder = " + exception.getMessage());
+            System.out.println("exception.getMessage() = " + exception.getMessage());
         }
+
+        try {
+            System.out.println("Access token to call the (backend-service) 'Client' Admin REST API which requires authorization = " + keycloakClientCredentialsGrantType.tokenManager().grantToken().getToken());
+        }catch (Exception exception){
+            System.out.println("exception.getMessage() = " + exception.getMessage());
+        }
+
         return keycloak.realm("quarkus").roles().list();
     }
 
