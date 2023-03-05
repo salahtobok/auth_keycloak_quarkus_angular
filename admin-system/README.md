@@ -119,3 +119,10 @@ or
     </dependency>
 
 <p>will throw java.lang.NullPointerException: Cannot invoke "String.startsWith(String)" because "authHeader" is null</p>
+
+## Guide For "USING OPENID CONNECT (OIDC) AND KEYCLOAK TO CENTRALIZE AUTHORIZATION"
+<p>https://quarkus.io/guides/security-keycloak-authorization</p>
+
+## Guide For "USING KEYCLOAK ADMIN CLIENT"
+<p>https://quarkus.io/guides/security-keycloak-admin-client</p>
+
