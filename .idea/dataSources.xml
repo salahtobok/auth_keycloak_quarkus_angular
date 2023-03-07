@@ -8,5 +8,29 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/quarkus_admin</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="room-service/Hibernate" uuid="c3f66840-6260-465d-a04c-eb19797402f9">
+      <driver-ref>elasticsearch</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>org.elasticsearch.xpack.sql.jdbc.EsDriver</jdbc-driver>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="employee-service/Hibernate" uuid="ccf3a8d6-21a1-484e-99d2-a704d1c6b806">
+      <driver-ref>elasticsearch</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>org.elasticsearch.xpack.sql.jdbc.EsDriver</jdbc-driver>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="admin-system/Hibernate" uuid="9c0d3fd5-466a-4d19-a4a3-c1149e5e8359">
+      <driver-ref>elasticsearch</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>org.elasticsearch.xpack.sql.jdbc.EsDriver</jdbc-driver>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
