@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.admin.security.keycloak.authorization;
+package com.admin.business.rest_resource;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.keycloak.adapters.KeycloakConfigResolver;

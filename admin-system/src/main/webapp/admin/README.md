@@ -17,3 +17,9 @@ Webcodein learning website repository.
 
     - ng serve admin --ssl --live-reload      
     - To build for production  or npm run dev:ssr with edit environment.ts
+
+-- 
+    Angular & Quarkus & Keycloak : Authentication & Authorization Config :
+    <p>set * Valid Redirect URIs  = http://localhost:4200/*</p> 
+    <p>set * Web Origins  = http://localhost:4200</p> 
+    <p>http://localhost:4200 is the URL for our App</p>

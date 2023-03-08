@@ -1,4 +1,4 @@
-package com.admin.security.keycloak.authorization;
+package com.admin.business.rest_resource;
 
 import io.quarkus.security.ForbiddenException;
 import io.quarkus.security.identity.SecurityIdentity;

@@ -1,4 +1,4 @@
-package com.admin.security.keycloak.authorization;
+package com.admin.business.rest_resource;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
