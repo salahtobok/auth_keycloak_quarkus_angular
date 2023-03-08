@@ -2,6 +2,7 @@ package com.admin.business.rest_resource;
 
 import com.admin.Room;
 import com.admin.business.registered_rest_client.RoomServiceRest;
+import io.quarkus.security.Authenticated;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.keycloak.admin.client.Keycloak;
 
@@ -13,7 +14,8 @@ import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/rooms")
+@Path("/api/rooms")
+@Authenticated
 public class RoomResource {
 
     @Inject

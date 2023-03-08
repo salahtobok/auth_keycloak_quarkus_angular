@@ -10,7 +10,7 @@ import { MessageService } from './message.service';
 @Injectable({ providedIn: 'root' })
 export class AdminService {
 
-  private roomsUrl = 'http://localhost:8080/rooms';  // URL to web api
+  private roomsUrl = 'http://localhost:8080/api/rooms';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
