@@ -62,8 +62,8 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar" />
         </processorPath>
         <module name="room-service" />
-        <module name="admin-system" />
         <module name="employee-service" />
+        <module name="admin-system" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -126,3 +126,10 @@ or
 ## Guide For "USING KEYCLOAK ADMIN CLIENT"
 <p>https://quarkus.io/guides/security-keycloak-admin-client</p>
 
+## Use @RoleAllowed To Scan the roles which caming from the jwt
+<p>Add these two extension : ./mvnw quarkus:add-extension -Dextensions='smallrye-jwt,smallrye-jwt-build'</p>
+<p>Read this article : https://quarkus.io/guides/security-jwt</p>
+
+## Notes :
+<p>01 - Don't use comment in application.properties files</p>
+<p>02 - Annotating the resource with @Authenticated without enabling "Authorization Enabled" in our client will throw 500 (Internal Server Error) in browser console</p>
