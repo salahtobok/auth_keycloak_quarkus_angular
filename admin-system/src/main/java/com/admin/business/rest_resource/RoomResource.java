@@ -6,6 +6,7 @@ import io.quarkus.security.Authenticated;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.keycloak.admin.client.Keycloak;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -27,6 +28,7 @@ public class RoomResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @RolesAllowed("FETCH_ROOMS")
     public List<Room> getAllRooms(){
 //        keycloak.tokenManager().getAccessToken()
         List<Room> rooms = new ArrayList<>();
