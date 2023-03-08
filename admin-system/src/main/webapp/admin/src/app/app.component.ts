@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import Keycloak from "keycloak-js";
 import {AuthConfig, OAuthService} from "angular-oauth2-oidc";
+import {AdminService} from "../admin.service";
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,7 @@ export class AppComponent implements OnInit{
     })*/
   }
 
-  constructor(private oauthService: OAuthService) {
+  constructor(private oauthService: OAuthService,private adminService : AdminService) {
     this.configure();
   }
 
@@ -55,5 +56,9 @@ export class AppComponent implements OnInit{
 
 
 
+  fetchRooms(): void {
+    this.adminService.getRooms()
+      .subscribe(rooms => console.log(rooms));
+  }
 
 }

@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/api/rooms")
+@Path("/rooms")
 public class RoomResource {
 
     @Inject

@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/api/employees")
+@Path("/employees")
 public class EmployeeResource {
 
     @Inject
