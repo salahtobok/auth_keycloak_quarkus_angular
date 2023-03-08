@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import Keycloak from "keycloak-js";
 import {AuthConfig, OAuthService} from "angular-oauth2-oidc";
 import {AdminService} from "../admin.service";
+import {authConfig} from "../auth.config";
 
 @Component({
   selector: 'app-root',
@@ -12,34 +13,13 @@ export class AppComponent implements OnInit{
   title = 'admin';
 
 
-/*  keycloak = new Keycloak({
-    clientId: "backend-service", url: "http://localhost:8543/",
-    "realm": "quarkus",
-});*/
-
-  ngOnInit(): void {
-/*    console.log("============================")
-    this.keycloak.init({
-      onLoad: 'login-required',
-      silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html'
-    })*/
-  }
-
   constructor(private oauthService: OAuthService,private adminService : AdminService) {
     this.configure();
   }
 
-  authConfig: AuthConfig = {
-    issuer: 'http://localhost:8543/realms/quarkus',
-    redirectUri: window.location.origin + "/",
-    clientId: 'backend-service',
-    scope: 'openid',
-    responseType: 'code',
-    // at_hash is not present in id token in older versions of keycloak.
-    // use the following property only if needed!
-    // disableAtHashCheck: true,
-    showDebugInformation: true
+  ngOnInit(): void {
   }
+
 
   public login() {
     this.oauthService.initLoginFlow();
@@ -50,8 +30,9 @@ export class AppComponent implements OnInit{
   }
 
   private configure() {
-    this.oauthService.configure(this.authConfig);
+    this.oauthService.configure(authConfig);
     this.oauthService.loadDiscoveryDocumentAndTryLogin();
+    this.oauthService.setupAutomaticSilentRefresh();
   }
 
 
@@ -60,5 +41,6 @@ export class AppComponent implements OnInit{
     this.adminService.getRooms()
       .subscribe(rooms => console.log(rooms));
   }
+
 
 }
