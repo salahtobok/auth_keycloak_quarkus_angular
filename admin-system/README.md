@@ -133,3 +133,4 @@ or
 ## Notes :
 <p>01 - Don't use comment in application.properties files</p>
 <p>02 - Annotating the resource with @Authenticated without enabling "Authorization Enabled" in our client will throw 500 (Internal Server Error) in browser console</p>
+<p>03 - # Keycloak OIDC Configuration in application.properties file is mandatory for Using Auth Code Flow by SPA</p>
