@@ -22,4 +22,4 @@ Webcodein learning website repository.
     Angular & Quarkus & Keycloak : Authentication & Authorization Config :
     <p>set * Valid Redirect URIs  = http://localhost:4200/*</p> 
     <p>set * Web Origins  = http://localhost:4200</p> 
-    <p>http://localhost:4200 is the URL for our App</p>
+    <p>http://localhost:4200 is the URL for our Angular Application</p>
