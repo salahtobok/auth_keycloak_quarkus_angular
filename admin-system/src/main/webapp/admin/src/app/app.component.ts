@@ -17,12 +17,22 @@ export class AppComponent implements OnInit{
     this.configure();
   }
 
-  ngOnInit(): void {
-  }
+  keycloak = new Keycloak({
+    clientId: "backend-service", url: "http://localhost:8543/",
+    "realm": "quarkus",
+  });
 
+  ngOnInit(): void {
+/*    console.log("============================")
+    this.keycloak.init({
+      onLoad: 'login-required',
+      silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html'
+    })*/
+  }
 
   public login() {
     this.oauthService.initLoginFlow();
+    // this.oauthService.initCodeFlow();
   }
 
   public logoff() {
@@ -38,6 +48,8 @@ export class AppComponent implements OnInit{
 
 
   fetchRooms(): void {
+    console.log(this.keycloak.token)
+
     this.adminService.getRooms()
       .subscribe(rooms => console.log(rooms));
   }

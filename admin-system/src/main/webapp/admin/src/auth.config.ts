@@ -6,6 +6,7 @@ export const   authConfig: AuthConfig = {
   clientId: 'backend-service',
   scope: 'openid',
   responseType: 'code',
+  strictDiscoveryDocumentValidation : true,
   // at_hash is not present in id token in older versions of keycloak.
   // use the following property only if needed!
   // disableAtHashCheck: true,
